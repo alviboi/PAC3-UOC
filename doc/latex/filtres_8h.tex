@@ -1,0 +1,163 @@
+\hypertarget{filtres_8h}{\section{Referència del Fitxer P\+A\+C3-\/\+U\+O\+C/libsrc/filtres.h}
+\label{filtres_8h}\index{P\+A\+C3-\/\+U\+O\+C/libsrc/filtres.\+h@{P\+A\+C3-\/\+U\+O\+C/libsrc/filtres.\+h}}
+}
+
+
+Capçaleres de les funcions de \hyperlink{filtres_8c}{filtres.\+c}.  
+
+
+Aquest gràfic mostra quins fitxers inclouen, de forma directa o indirecta, aquest fitxer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{filtres_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funcions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{filtres_8h_a70af81d8e422b34c60277715a0bf44f5}{fs\+\_\+head} (int fd)
+\begin{DoxyCompactList}\small\item\em Funció que imprimix per pantalla les tres primeres línees. \end{DoxyCompactList}\item 
+void \hyperlink{filtres_8h_afd7a1b36922bf518c9bd7e8a848df96a}{fs\+\_\+wc} (int fd)
+\begin{DoxyCompactList}\small\item\em Funció que conta el nombre de caràcters, paraules i línies. \end{DoxyCompactList}\item 
+void \hyperlink{filtres_8h_a643063470b5a645fd962404c2850c3bd}{fs\+\_\+nl} (int fd)
+\begin{DoxyCompactList}\small\item\em Filtre que numera les línies de l'entrada i ho trau per pantalla. \end{DoxyCompactList}\item 
+void \hyperlink{filtres_8h_a9a8dabec27d785f7ec81e8a498b9f5a3}{fs\+\_\+cut} (int fd, int col)
+\begin{DoxyCompactList}\small\item\em Filtre que mostra la paraula a la posició col de cada línia, la primera paraula de cada línia està a la posició 1, no 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Capçaleres de les funcions de \hyperlink{filtres_8c}{filtres.\+c}. 
+
+A l'arxiu de capaçaleres es troben les funcions necessàries per a processar l'arxiu font \hyperlink{filtres_8c}{filtres.\+c}. Les funcions són\+:
+
+void \hyperlink{filtres_8h_a70af81d8e422b34c60277715a0bf44f5}{fs\+\_\+head( int fd )}; Filtre que mostra les tres primeres línies de l'arxiu i ho mostra per pantalla. Les línies estan separades pel caràcter salt de línia '~\newline
+'.
+
+void \hyperlink{filtres_8h_afd7a1b36922bf518c9bd7e8a848df96a}{fs\+\_\+wc( int fd )}; Filtre que conta el nombre de caràcters, paraules i línies de l'arxiu d'entrada i ho mostra per pantalla.
+
+void \hyperlink{filtres_8h_a643063470b5a645fd962404c2850c3bd}{fs\+\_\+nl( int fd )}; Filtre que numera les línies de l'entrada i ho trau per pantalla.
+
+void fs\+\_\+cut( int  fd, int col ); Filtre que mostra la paraula a la posició col de cada línia, la primera paraula de cada línia està a la posició 1, no 0.
+
+\begin{DoxyAuthor}{Autor}
+Alfredo Rafael Vicente Boix i Eduardo César Galobardes 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+14/12/2015 
+\end{DoxyDate}
+
+
+Definició al fitxer \hyperlink{filtres_8h_source}{filtres.\+h}.
+
+
+
+\subsection{Documentació de les Funcions}
+\hypertarget{filtres_8h_a9a8dabec27d785f7ec81e8a498b9f5a3}{\index{filtres.\+h@{filtres.\+h}!fs\+\_\+cut@{fs\+\_\+cut}}
+\index{fs\+\_\+cut@{fs\+\_\+cut}!filtres.\+h@{filtres.\+h}}
+\subsubsection[{fs\+\_\+cut}]{\setlength{\rightskip}{0pt plus 5cm}void fs\+\_\+cut (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)}}\label{filtres_8h_a9a8dabec27d785f7ec81e8a498b9f5a3}
+
+
+Filtre que mostra la paraula a la posició col de cada línia, la primera paraula de cada línia està a la posició 1, no 0. 
+
+Aquest filtre mostra la paraula a la posició col, que és un paràmetre que s'ha de proporcionar a la funció, de cada línia. El filtre comença a contar per la paraula 1 i a continuació la segona, i així fins acabar. Si no hi ha prou columnes en la línea, la obvia i no la té en compte de manera que una línea amb 3 paraules i donant-\/li com a paràmetre d'entrada 4, no mostraria res per pantalla i passaria a la següent línea.
+
+
+\begin{DoxyParams}{Paràmetres}
+{\em fd} & enter que proporcionar l'identificador de l'arxiu que hem obert per a poder filtrar. \\
+\hline
+{\em col} & enter que indica quin és el número de columna que es vol mostrat de cada línea. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+void la funció no torna cap valor 
+\end{DoxyReturn}
+
+
+Definició a la línia 160 del fitxer filtres.\+c.
+
+\hypertarget{filtres_8h_a70af81d8e422b34c60277715a0bf44f5}{\index{filtres.\+h@{filtres.\+h}!fs\+\_\+head@{fs\+\_\+head}}
+\index{fs\+\_\+head@{fs\+\_\+head}!filtres.\+h@{filtres.\+h}}
+\subsubsection[{fs\+\_\+head}]{\setlength{\rightskip}{0pt plus 5cm}void fs\+\_\+head (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}}\label{filtres_8h_a70af81d8e422b34c60277715a0bf44f5}
+
+
+Funció que imprimix per pantalla les tres primeres línees. 
+
+Aquest filtre mostrarà les tres primeres línies llegides. Les línies estan separades pel caràcter salt de línia.
+
+
+\begin{DoxyParams}{Paràmetres}
+{\em fd} & enter que proporcionar l'identificador de l'arxiu que hem obert per a poder filtrar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+void la funció no torna cap valor 
+\end{DoxyReturn}
+
+
+Definició a la línia 69 del fitxer filtres.\+c.
+
+\hypertarget{filtres_8h_a643063470b5a645fd962404c2850c3bd}{\index{filtres.\+h@{filtres.\+h}!fs\+\_\+nl@{fs\+\_\+nl}}
+\index{fs\+\_\+nl@{fs\+\_\+nl}!filtres.\+h@{filtres.\+h}}
+\subsubsection[{fs\+\_\+nl}]{\setlength{\rightskip}{0pt plus 5cm}void fs\+\_\+nl (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}}\label{filtres_8h_a643063470b5a645fd962404c2850c3bd}
+
+
+Filtre que numera les línies de l'entrada i ho trau per pantalla. 
+
+Aquest filtre numera les línies de l'entrada, de manera que queden numerades de la següent manera\+:
+\begin{DoxyEnumerate}
+\item Primera línea.
+\item Segona línea.
+\item etc...
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Paràmetres}
+{\em fd} & enter que proporcionar l'identificador de l'arxiu que hem obert per a poder filtrar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+void la funció no torna cap valor 
+\end{DoxyReturn}
+
+
+Definició a la línia 131 del fitxer filtres.\+c.
+
+\hypertarget{filtres_8h_afd7a1b36922bf518c9bd7e8a848df96a}{\index{filtres.\+h@{filtres.\+h}!fs\+\_\+wc@{fs\+\_\+wc}}
+\index{fs\+\_\+wc@{fs\+\_\+wc}!filtres.\+h@{filtres.\+h}}
+\subsubsection[{fs\+\_\+wc}]{\setlength{\rightskip}{0pt plus 5cm}void fs\+\_\+wc (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}}\label{filtres_8h_afd7a1b36922bf518c9bd7e8a848df96a}
+
+
+Funció que conta el nombre de caràcters, paraules i línies. 
+
+Aquest filtre contarà el nombre de caràcters, paraules i línies de l'entrada i ho mostrarà per pantalla. Es consideren com a separadors de paraules els caràcters salt de línia, tabulador i espai en blanc; i com a separador de línies només el salt de línia. Dues paraules poden estar separades per diversos caràcters separadors.
+
+
+\begin{DoxyParams}{Paràmetres}
+{\em fd} & enter que proporcionar l'identificador de l'arxiu que hem obert per a poder filtrar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+void la funció no torna cap valor 
+\end{DoxyReturn}
+
+
+Definició a la línia 93 del fitxer filtres.\+c.
+

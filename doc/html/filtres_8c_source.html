@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>PAC3: Fitxer de Codi PAC3-UOC/libsrc/filtres.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">PAC3
+   &#160;<span id="projectnumber">3.0</span>
+   </div>
+   <div id="projectbrief">Pràctica de Desenvolupament de Programari</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat per Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pàgina&#160;principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Fitxers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Llista&#160;dels&#160;Fitxers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;Fitxers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tot</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Fitxers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funcions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e30b9ca21a0404f951828e90ba7ac9fe.html">PAC3-UOC</a></li><li class="navelem"><a class="el" href="dir_cdea858abf526290ae6b41bf15a44cad.html">libsrc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">filtres.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="filtres_8c.html">Veure la documentació d'aquest fitxer.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="filtres_8h.html">filtres.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/*************************************************************************************************/</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="filtres_8c.html#a6bc4e3de38e285d91873339766f429b8">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="filtres_8c.html#a6bc4e3de38e285d91873339766f429b8">printstr</a>(<span class="keywordtype">int</span> num)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> aux, i;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">char</span> *nstr;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        aux = 1;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span>( i = 1; i &lt; num; i*=10 ) aux++;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    nstr = (<span class="keywordtype">char</span> *)malloc( num + 2 );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        sprintf(nstr, <span class="stringliteral">&quot;%d &quot;</span>, num);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span>(write( 1, nstr, strlen( nstr ) ) == -1){free (nstr); exit;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    free (nstr);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/*************************************************************************************************/</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="filtres_8h.html#a70af81d8e422b34c60277715a0bf44f5">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="filtres_8c.html#a70af81d8e422b34c60277715a0bf44f5">fs_head</a>( <span class="keywordtype">int</span> fd )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">char</span> c;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">while</span>( read( fd, &amp;c, 1 ) &amp;&amp; (count &lt; 3) ){</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span>(write( 1, &amp;c, 1 )==-1){exit;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> ( c == <span class="charliteral">&#39;\n&#39;</span> ) count++;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">/*************************************************************************************************/</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="filtres_8h.html#afd7a1b36922bf518c9bd7e8a848df96a">   93</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="filtres_8c.html#afd7a1b36922bf518c9bd7e8a848df96a">fs_wc</a> ( <span class="keywordtype">int</span> fd )</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">int</span> nl = 0, np = 0, nc = 0, sep = 0;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">char</span> c;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">while</span>( read( fd, &amp;c, 1 ) ){</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        nc++;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">switch</span>( c ){</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;\n&#39;</span>: nl++;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;\t&#39;</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39; &#39;</span>: <span class="keywordflow">if</span>( !sep ) {np++; sep = 1;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                  <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">default</span>: sep = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;     }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="filtres_8c.html#a6bc4e3de38e285d91873339766f429b8">printstr</a>( nc );</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="filtres_8c.html#a6bc4e3de38e285d91873339766f429b8">printstr</a>( np );</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="filtres_8c.html#a6bc4e3de38e285d91873339766f429b8">printstr</a>( nl );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    c = 10;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span>(write( 1, &amp;c, 1 )==-1){exit;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">/*************************************************************************************************/</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="filtres_8h.html#a643063470b5a645fd962404c2850c3bd">  131</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="filtres_8c.html#a643063470b5a645fd962404c2850c3bd">fs_nl</a>( <span class="keywordtype">int</span> fd )</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">int</span> nl = 1, <span class="keyword">new</span> = 1;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">char</span> c;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">while</span>( read( fd, &amp;c, 1) ){</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">if</span>( <span class="keyword">new</span> ){</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <a class="code" href="filtres_8c.html#a6bc4e3de38e285d91873339766f429b8">printstr</a>( nl );</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            nl++;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="keyword">new</span> = 0;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">if</span> ( c == <span class="charliteral">&#39;\n&#39;</span> ) <span class="keyword">new</span> = 1;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">if</span>(write( 1, &amp;c, 1 )==-1){exit;}        </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">/*************************************************************************************************/</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="filtres_8h.html#a9a8dabec27d785f7ec81e8a498b9f5a3">  160</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="filtres_8c.html#a9a8dabec27d785f7ec81e8a498b9f5a3">fs_cut</a>( <span class="keywordtype">int</span> fd, <span class="keywordtype">int</span> col )</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">char</span> c;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">int</span> pal = 1, nc = 0, aux2 = 0;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">while</span>( read( fd, &amp;c, 1 ) ){</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span> ( c == <span class="charliteral">&#39;\n&#39;</span> ){</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">if</span>(pal &gt;= col) {<span class="keywordflow">if</span>(write( 1, &amp;c, 1 ) == -1){exit;}}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            pal = 1;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            nc = 0;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        } </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( pal == col ){ nc++; <span class="keywordflow">if</span>(write( 1, &amp;c, 1 )==-1){exit;}}</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span> (( c == <span class="charliteral">&#39;\t&#39;</span> ) || ( c == <span class="charliteral">&#39; &#39;</span> )) { <span class="keywordflow">if</span> (aux2 == 1){} <span class="keywordflow">else</span> {pal++;} aux2=1;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">else</span> {aux2 = 0;}</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="ttc" id="filtres_8h_html"><div class="ttname"><a href="filtres_8h.html">filtres.h</a></div><div class="ttdoc">Capçaleres de les funcions de filtres.c. </div></div>
+<div class="ttc" id="filtres_8c_html_a643063470b5a645fd962404c2850c3bd"><div class="ttname"><a href="filtres_8c.html#a643063470b5a645fd962404c2850c3bd">fs_nl</a></div><div class="ttdeci">void fs_nl(int fd)</div><div class="ttdoc">Filtre que numera les línies de l&#39;entrada i ho trau per pantalla. </div><div class="ttdef"><b>Definition:</b> <a href="filtres_8c_source.html#l00131">filtres.c:131</a></div></div>
+<div class="ttc" id="filtres_8c_html_afd7a1b36922bf518c9bd7e8a848df96a"><div class="ttname"><a href="filtres_8c.html#afd7a1b36922bf518c9bd7e8a848df96a">fs_wc</a></div><div class="ttdeci">void fs_wc(int fd)</div><div class="ttdoc">Funció que conta el nombre de caràcters, paraules i línies. </div><div class="ttdef"><b>Definition:</b> <a href="filtres_8c_source.html#l00093">filtres.c:93</a></div></div>
+<div class="ttc" id="filtres_8c_html_a9a8dabec27d785f7ec81e8a498b9f5a3"><div class="ttname"><a href="filtres_8c.html#a9a8dabec27d785f7ec81e8a498b9f5a3">fs_cut</a></div><div class="ttdeci">void fs_cut(int fd, int col)</div><div class="ttdoc">Filtre que mostra la paraula a la posició col de cada línia, la primera paraula de cada línia està a ...</div><div class="ttdef"><b>Definition:</b> <a href="filtres_8c_source.html#l00160">filtres.c:160</a></div></div>
+<div class="ttc" id="filtres_8c_html_a70af81d8e422b34c60277715a0bf44f5"><div class="ttname"><a href="filtres_8c.html#a70af81d8e422b34c60277715a0bf44f5">fs_head</a></div><div class="ttdeci">void fs_head(int fd)</div><div class="ttdoc">Funció que imprimix per pantalla les tres primeres línees. </div><div class="ttdef"><b>Definition:</b> <a href="filtres_8c_source.html#l00069">filtres.c:69</a></div></div>
+<div class="ttc" id="filtres_8c_html_a6bc4e3de38e285d91873339766f429b8"><div class="ttname"><a href="filtres_8c.html#a6bc4e3de38e285d91873339766f429b8">printstr</a></div><div class="ttdeci">void printstr(int num)</div><div class="ttdoc">Funció que imprimix per pantalla el número donat en el paràmetre d&#39;entrada. </div><div class="ttdef"><b>Definition:</b> <a href="filtres_8c_source.html#l00040">filtres.c:40</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generat a Dl Dec 14 2015 21:01:36 per a PAC3 per &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>
