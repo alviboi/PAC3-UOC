@@ -1,0 +1,5 @@
+\select@language {catalan}
+\contentsline {section}{\numberline {1}Introducci\'o}{3}
+\contentsline {section}{\numberline {2}Control de Versions}{4}
+\contentsline {section}{\numberline {3}Documentaci\'o}{8}
+\contentsline {section}{\numberline {4}Conclusions}{14}
