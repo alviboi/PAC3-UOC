@@ -25,7 +25,7 @@ El segon problema s'han utilitzat les etiquetes doxygen i el programa doxywizard
 \section{Control de Versions}
 En aquesta part hem decidit crear un Control de versions amb git i github, és epr això que el primer que hem fet és donar-nos d'alta a github i crear un repositori amb el nom de PAC3-UOC. D'aquesta manera el resultat de la nostre dipòsit serà compartit.\\
 \includegraphics[width=\linewidth]{./images/pic11.png}\\
-Donada la naturalessa de github el dipòsit pot ser públic o privat, en aquest cas hem decidit fer-lo públic, però podriem haver gestionat el projecte per a que fos provat i estigués compartit únicament amb el professor.\\
+Donada la naturalesa de github el dipòsit pot ser públic o privat, en aquest cas hem decidit fer-lo públic, però podríem haver gestionat el projecte per a que fos provat i estigués compartit únicament amb el professor.\\
 Evidentment per a treballar al nostre ordinador, el primer que hem de fer és instal·lar git al nostre ordinador:
 \begin{center}
 \emph{sudo apt-get install git}\\
@@ -33,11 +33,11 @@ Evidentment per a treballar al nostre ordinador, el primer que hem de fer és ins
 Després passem el nostre dipòsit al nostre ordinador amb el següent comandament:\\
 \includegraphics[width=\linewidth]{./images/pic12.png}\\
 De manera que creem una còpia del dipòsit al nostre ordinador. De moment el dipòsit no té més que un arxiu README que github et crea automàticament.
-Una vegada creada la còpia al nostre ordinador per a afegir arxius, en aquest cas els arxius filtres.c i filtres.h que es troben al directori libsrc, per tant hem de tenir en compte que en primer lloc hem de afegir-los al nostre repositori amb el commandament:
+Una vegada creada la còpia al nostre ordinador per a afegir arxius, en aquest cas els arxius filtres.c i filtres.h que es troben al directori libsrc, per tant hem de tenir en compte que en primer lloc hem de afegir-los al nostre repositori amb el comandament:
 \begin{center}
 \emph{git add --all ./libsrc/}
 \end{center}
-Això no significa que els arxius estiguen al nostre depòsit haurem d'afegir-los, amb un comentari. Pit resultar redundant, però d'aquesta manera pots afegir diversos arxius i posteriorment guardar-los tots de cop al dipòsit amb el commandament:
+Això no significa que els arxius estiguen al nostre depòsit haurem d'afegir-los, amb un comentari. Pit resultar redundant, però d'aquesta manera pots afegir diversos arxius i posteriorment guardar-los tots de cop al dipòsit amb el comandament:
 \begin{center}
 \emph{git commit -m "Afegint documents"}
 \end{center}
@@ -54,7 +54,7 @@ Així, podrem aconseguir una còpia al nostre ordinador local sempre amb el comman
 \begin{center}
 \emph{git clone https://github.com/alviboi/PAC3-UOC.git}
 \end{center}
-De manera que sempre tindrem accesible el nostre projecte des de qualsevol ordinador. Podem veure com quedaria la pàgina del nostre projecte a github\footnote{Podem veure que els arxius que tenim són de les diferents preguntes que hem anat tractant, no només d'aquesta}.\\
+De manera que sempre tindrem accessible el nostre projecte des de qualsevol ordinador. Podem veure com quedaria la pàgina del nostre projecte a github\footnote{Podem veure que els arxius que tenim són de les diferents preguntes que hem anat tractant, no només d'aquesta}.\\
 \includegraphics[width=\linewidth]{./images/pic15.png}\\
 Al nostre ordinador podem veure com tenim una còpia de tots els arxius que tenim al dipòsit. A més tenim una carpeta anomenada .git.\\
 \includegraphics[width=\linewidth]{./images/pic16.png}\\
@@ -74,7 +74,7 @@ Per a la part de documentació hem utilitzat etiquetes doxygen en els comentaris 
   \emph{\textbf{@date}} 14/12/2015\\
 \/*/
 \end{shaded}
-Com podem veure el que hem fer és utilitzar les etiquetes doxygen que ens permeten especificar què esem exlicant en cada punt, així per exemple:
+Com podem veure el que hem fer és utilitzar les etiquetes doxygen que ens permeten especificar què estem explicant en cada punt, així per exemple:
 \begin{center}
 \begin{tabular}{ | c | c|}
   \hline
@@ -88,11 +88,11 @@ Com podem veure el que hem fer és utilitzar les etiquetes doxygen que ens permet
   \hline 
 \end{tabular}
 \end{center}
-De manera semblant en cadascuna de les funcions fem una xicoteta explació de quin és el seu propòsit tot especificant.
+De manera semblant en cadascuna de les funcions fem una xicoteta explicació de quin és el seu propòsit tot especificant.
 \begin{shaded}
 /**\\
 \emph{\textbf{@brief}} Funció que imprimix per pantalla el número donat en el paràmetre d'entrada\\
-Amb aquesta funció fem la reserva de memòria necessària per a possar en memòria els enters passats en el paràmetre d'entrada que s'alliberarà posteriorment. Després es crea una cadena de tipus "1. " que es passa per a ser escrita per pantalla. Si la funció presenta cap error es deixa d'executar i no s'allibera la memòria. Si es desitja modificar aquest punt es pot utlitzar la següent modificació:\\
+Amb aquesta funció fem la reserva de memòria necessària per a posar en memòria els enters passats en el paràmetre d'entrada que s'alliberarà posteriorment. Després es crea una cadena de tipus "1. " que es passa per a ser escrita per pantalla. Si la funció presenta cap error es deixa d'executar i no s'allibera la memòria. Si es desitja modificar aquest punt es pot utilitzar la següent modificació:\\
 \verb+\+verbatim\\
 if(write( 1, nstr, strlen( nstr ) ) == -1)\{free (nstr); exit;\}\\
 \verb+\+endverbatim\\
@@ -127,16 +127,16 @@ A banda d'aquestes coses, hem hagut de modificar uns paràmetres a la pestanya Ex
 Hem hagut de modificar el paràmetre DOXYFILE\_ENCODING i el paràmetre OUTPUT\_LANGUAGE per a que ens puga reconèixer els accents del català i per a especificar en quina llengua està escrita la documentació.
 Una vegada canviats els paràmetres ja només ens queda generar la documentació:\\
 \includegraphics[width=\linewidth]{./images/pic23.png}
-Hem de recordar que tot i que la documentació ha sigut generada dins de la carperta, dins del nostre dipòsit, fins que no fem un git add i deprés un git commit... els arxius no es trobaran al dipòsit.
+Hem de recordar que tot i que la documentació ha sigut generada dins de la carperta, dins del nostre dipòsit, fins que no fem un \emph{git add...} i després un \emph{git commit...} els arxius no es trobaran al dipòsit.
 Per a poder accedir a la documentació creada anem al directori de treball i podem veure l'arxiu index.html, podem veure que el programa ha creat automàticament tots els enllaços i explcicacions, formatant la documentació per a que quedi d'una manera molt més visual i agradable:\\
 \includegraphics[width=\linewidth]{./images/pic24.png}
 \pagebreak
 \section{Conclusions}
-Aquesta pràctica ha resultat molt didàctica, ja que hem tractat dos punts fonamentals sobre la creació de programari i que sovint oblidem, que són el control de versions i la documentació que deu acompanyar a qualsevol projecte. En el nostre cas ens hem decantat per github, encara que puga resultar l'opció més senzilla, ja que de cara al projecte final de màster és el repositori amb el que el meu tutor de l'empressa li agrada treballar, encara que han alguns punts com al creació de branches o fer un merge per a fer proves abans d'incorporar-ho a la rama principal.
+Aquesta pràctica ha resultat molt didàctica, ja que hem tractat dos punts fonamentals sobre la creació de programari i que sovint oblidem, que són el control de versions i la documentació que deu acompanyar a qualsevol projecte. En el nostre cas ens hem decantat per github, encara que puga resultar l'opció més senzilla, ja que de cara al projecte final de màster és el repositori amb el que el meu tutor de l'empresa li agrada treballar, encara que han alguns punts com al creació de branches o fer un merge per a fer proves abans d'incorporar-ho a la rama principal.
 De tota manera hem creat també un repositori amb cvsd per a pdoer veure com es treballaria amb ell, ja que subversion l'hem tractat amb altres assignatures:\\
 \includegraphics[width=\linewidth]{./images/pic31.png}
 La part de documentació utilitzant doxygen, que és una ferramenta que no coneixia, m'ha semblat molt adequada encara que s'han hagut d'instal·lar alguns paquets adicionals per a que funcionara correctament. 
-Hem de dir que les ferramentes utilitzades són ferrramentes bastant testades i utlitzades i tenen una forta presència en el món de la programació. Per això no hem trobat grans problemes a l'hora de treballar amb elles, i anat tot bastant rodat. Probablement les majors dificultat les hem trobat generant el document \LaTeX\  que no coneixia. En realitat, al començar a redactar el document, resultava un tant enfarragós, però hem utilitzat el TeXstudio, que tot i que costa acostumar-te un poc al seu funcionament, una vegada agafes un poc de soltura, resulta una ferramenta mot útil i quasi imprescindible per a redactar els documents de caràcter oficial.
+Hem de dir que les ferramentes utilitzades són ferramentes bastant testades i utilitzades i tenen una forta presència en el món de la programació. Per això no hem trobat grans problemes a l'hora de treballar amb elles, i anat tot bastant rodat. Probablement les majors dificultat les hem trobat generant el document \LaTeX\  que no coneixia. En realitat, al començar a redactar el document, resultava un tant enfarragós, però hem utilitzat el TeXstudio, que tot i que costa acostumar-te un poc al seu funcionament, una vegada agafes un poc de soltura, resulta una ferramenta mot útil i quasi imprescindible per a redactar els documents de caràcter oficial.
 \pagebreak
 
 \end{document}
