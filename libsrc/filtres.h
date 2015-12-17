@@ -12,7 +12,7 @@
 
 	void fs_cut( int  fd, int col ); Filtre que mostra la paraula a la posició col de cada línia, la primera paraula de cada línia està a la posició 1, no 0.
 
-  @author Alfredo Rafael Vicente Boix i Eduardo César Galobardes 
+  @author Alfredo Rafael Vicente Boix i Eduardo César Galobardes.
   @date 14/12/2015
 
 */
